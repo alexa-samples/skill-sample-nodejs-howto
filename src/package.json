@@ -1,0 +1,27 @@
+{
+  "name": "skill-sample-nodejs-howto",
+  "version": "1.0.0",
+  "description": "How-to skill sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexa/skill-sample-nodejs-howto.git"
+  },
+  "keywords": [
+    "Alexa",
+    "skill",
+    "howto"
+  ],
+  "author": "Amazon.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/alexa/skill-sample-nodejs-howto/issues"
+  },
+  "homepage": "https://github.com/alexa/skill-sample-nodejs-howto#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.0"
+  }
+}
