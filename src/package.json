@@ -1,0 +1,19 @@
+{
+  "name": "skill-sample-nodejs-howto-i18n",
+  "version": "1.0.0",
+  "description": "How-to skill sample i18n version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Alexa",
+    "skill",
+    "howto"
+  ],
+  "author": "Amazon.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "alexa-sdk": "^1.0.5"
+  }
+}
