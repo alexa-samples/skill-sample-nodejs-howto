@@ -31,7 +31,6 @@ var handlers = {
         var cardTitle = this.t("DISPLAY_CARD_TITLE", this.t("SKILL_NAME"), itemName);
         var recipes = this.t("RECIPES");
         var recipe = recipes[itemName];
-        console.log(recipe);
 
         if (recipe) {
             this.attributes['speechOutput'] = recipe;
