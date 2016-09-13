@@ -13,6 +13,8 @@ exports.handler = function(event, context, callback) {
 };
 
 var handlers = {
+    //Use LaunchRequest, instead of NewSession if you want to use the one-shot model
+    //Alexa, ask [my-skill-invocation-name] to (do something)...
     'NewSession': function () {
         this.attributes['speechOutput'] = 'Welcome to ' + SKILL_NAME + '. You can ask a question like, what\'s the' +
             ' recipe for a chest? ... Now, what can I help you with.';
