@@ -7,7 +7,7 @@ var recipes = require('./recipes');
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
     alexa.APP_ID = APP_ID;
-    //add resource to enable i18n, otherwise i18n module functions will not be loaded
+    // To enable string internationalization (i18n) features, set a resources object.
     alexa.resources = languageStrings;
     alexa.registerHandlers(handlers);
     alexa.execute();
