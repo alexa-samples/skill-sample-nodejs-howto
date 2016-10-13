@@ -19,7 +19,7 @@ Using the Alexa Skills Kit, you can build an application that can receive and re
 
 ## Step 1. Setting up Your Alexa Skill in the Developer Portal
 
-Skills are managed through the Amazon Developer Portal. You’ll link the Lambda function you created to a Skill defined in the [Developer Portal](https://developer.amazon.com/).
+Skills are managed through the Amazon Developer Portal. You’ll link the Lambda function you created to a skill defined in the [Developer Portal](https://developer.amazon.com/).
 
  1. Navigate to the Amazon Developer Portal. Sign in or create a free account (upper right). You might see a different image if you have registered already or our page may have changed. If you see a similar menu and the ability to create an account or sign in, you are in the right place.
 
@@ -82,7 +82,7 @@ Skills are managed through the Amazon Developer Portal. You’ll link the Lambda
 
     Given the flexibility and variation of spoken language in the real world, there will often be many different ways to express the same request. Providing these different phrases in your sample utterances will help improve voice recognition for the abilities you add to Alexa. It is important to include as wide a range of representative samples as you can -– all the phrases that you can think of that are possible in use (though do not include samples that users will never speak). Alexa also attempts to generalize based on the samples you provide to interpret spoken phrases that differ in minor ways from the samples specified.
 
-    Now it's time to add the Utterances. Select and Copy/paste the sample utterances from [GitHub](https://github.com/alexa/skill-sample-nodejs-howto/tree/master/speechAssets) with your initial language. For example, if your select English (US) as initial language above, then you will need to Copy/paste SampleUtterances_en_US.txt in previous link. An example of utterances is listed below. Once they are copied, the screen should look similar to the following image:
+    Now it's time to add the utterances. Select and Copy/paste the sample utterances from [GitHub](https://github.com/alexa/skill-sample-nodejs-howto/tree/master/speechAssets) with your initial language. For example, if your select English (US) as initial language above, then you will need to Copy/paste SampleUtterances_en_US.txt in previous link. An example of utterances is listed below. Once they are copied, the screen should look similar to the following image:
 
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/sample_utterances_us.PNG)
 
@@ -92,24 +92,24 @@ In "Enter Type" type in "LIST_OF_ITEMS". We will also copy the 516 acceptable va
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/custom_slot_types.png)
 
 
- 9. Select **Save**. You should see the interaction model being built (this might a take a minute or two). If you select next, your changes will be saved and you will go directly to the configuration screen. After selecting Save, it should now look like this:
+ 9. Select **Save**. You should see the interaction model being built (this might a take a minute or two). If you select next, your changes will be saved and you will go directly to the Configuration screen. After selecting Save, it should now look like this:
 
     ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/interactionmodel_build_success.png)
 
 Next we will configure the AWS Lambda function that will host the logic for our skill.
 
-## Step 2: Creating Your skill Logic using AWS Lambda
+## Step 2: Creating Your Skill Logic Using AWS Lambda
 
 ### Installing and Working with the Alexa Skills Kit SDK for Node.js (alexa-sdk)
 
-To make the development of skills easier, we have created the ASK SDK for Node.js. We will be using this module to deploy the sample. The The Alexa SDK is immediately available on [Github here](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) and can be deployed as a node package from within your Node.js environment.
+To make the development of skills easier, we have created the The The Alexa SDK for Node.js. We will be using this module to deploy the sample. The The Alexa SDK is available on [Github](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) and can be deployed as a Node package from within your Node.js environment.
 
  1. First, you will need to download the sample repository
     * On GitHub, navigate to the [How-to skill repository](https://github.com/alexa/skill-sample-nodejs-howto). Click download (the green button) to download the repository to your local machine.
 
  2. To leverage the SDK for ASK you will need to install Node.js and update npm. To set this up on your machine, [follow these steps](https://docs.npmjs.com/getting-started/installing-node).
 
- 3. Once you have the source downloaded, Node installed and npm updated, you are ready to install the ASK-SDK. Install this in the same directory as your src/index.js file for your skill. Change the directory to the src directory of your skill, and then in the command line, type:
+ 3. Once you have the source downloaded, Node installed and npm updated, you are ready to install the Alexa SDK. Install this in the same directory as your src/index.js file for your skill. Change the directory to the src directory of your skill, and then in the command line, type:
 
     ```
     npm install --save alexa-sdk
@@ -127,7 +127,7 @@ To make the development of skills easier, we have created the ASK SDK for Node.j
   1. Open [aws.amazon.com](https://aws.amazon.com/) and then choose **‘Create a Free Account’**
 
 * Follow the online instructions. Do not worry about the IAM role, we will do that later.
-* You will need a Valid Credit Card to set up your account (note the AWS Free Tier will suffice however. You can find out more about the free tier here.)
+* You will need a Valid Credit Card to set up your account (note the AWS Free Tier will suffice however. You can find out more about the free tier [here](https://aws.amazon.com/free/)).
 * Part of the sign-up procedure involves receiving a phone call and entering a PIN using the phone keypad.
 
  2. Sign in to the AWS Console
@@ -152,7 +152,7 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
  3. Select **“Create a Lambda Function”** to begin the process of defining your Lambda function.
 
- 4. At the bottom of the **‘Select Blueprint’** page, select **“Next”**
+ 4. At the bottom of the **‘Select Blueprint’** page, select **“Skip”**
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/aws_skip.png)
 
@@ -192,23 +192,23 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/CreateFunctionbuitton.png)
 
- 13. Congradulations, you have created your AWS Lambda function. **Copy** the ARN for use in the Configuration section of the Amazon Developer Portal.
+ 13. Congratulations, you have created your AWS Lambda function. **Copy** the ARN for use in the Configuration section of the Amazon Developer Portal.
 
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/ARN.png)
 
-## Step 3: Add Your Lambda Function to Your skill
+## Step 3: Add Your Lambda Function to Your Skill
 
  1. Navigate back to [developer.amazon.com](https://developer.amazon.com/) and select your skill from the list. You can select the skill name or the edit button.
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/edit.png)
 
- 2. Select the Configuration section. Add the ARN from the Lambda function you created in the AWS Console earlier. Select the **Lambda ARN (Amazon Resource Name)** radio button and tick the corresponding region. Then, select **“No”** for account linking since we will not be connecting to an external account for this tutorial. Paste the ARN you copied earlier into the Endpoint field. Then select **Next**. **Note:** the region(s) here should match the region(s) of your lambda function(s).
+ 2. Select the Configuration section. Add the ARN from the Lambda function you created in the AWS Console earlier. Select the **Lambda ARN (Amazon Resource Name)** radio button and tick the corresponding region. Then, select **“No”** for account linking since we will not be connecting to an external account for this tutorial. Paste the ARN you copied earlier into the Endpoint field. Then select **Next**. **Note:** the region(s) here should match the region(s) of your Lambda function(s).
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/configuration.png)
 
  3. You have now completed the initial development of your skill. Now it's time to test.
 
-## Step 4: Testing Your skill
+## Step 4: Testing Your Skill
 
  1. In the Test area, we are going to enter a sample utterance in the Service Simulator section and see how Alexa will respond. In this example, we have called the skill ‘Minecraft Helper’. This is the ‘Invocation Name’ we set up in the “Skill Information” section.
 
@@ -220,11 +220,10 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
   ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/servicessimulator.PNG)
 
- 3. (Optional) Testing with your device. This is optional as you can do all the testing in the portal. Assuming your Echo device is on-line (and logged in with the same account as your developer account), you should now see your skill enabled in the Alexa app and ask Alexa to launch your skill. For more information on testing an Alexa skill and registering an Alexa-enabled device, [check here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/testing-an-alexa-skill).
+ 3. (Optional) Testing with your device. This is optional as you can do all the testing in the portal. Assuming your Alexa device is on-line (and logged in with the same account as your developer account), you should now see your skill enabled in the Alexa app and ask Alexa to launch your skill. For more information on testing an Alexa skill and registering an Alexa-enabled device, [check here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/testing-an-alexa-skill).
 
 ### Not working (getting an invalid response)?
- Do you have the right ARN copied from your Developer Portal/Skill into your your Lambda function?
-
+* Do you have the right ARN copied from your Developer Portal/Skill into your your Lambda function?
 * Are you calling the right invocation name?
 * Are you saying launch, start or open?
 * Are you sure you have no other skills in your accounts with the same invocation name?
@@ -236,7 +235,7 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
    * Provide a skill name that represents the new skill you are creating.
    * Come up with a cool Invocation Name that users will use to invoke your skill
-   * Create a fun icon. Be sure you have the rights to whatever icons you are uploading – you will need to provide both 108x108px and 512x512px images. Need help finding an image? see PixelBay as a possible source for royalty-free images. Use an image editor (such as Paint on Windows or Preview on Mac) to change the size of the image.
+   * Create a fun icon. Be sure you have the rights to whatever icons you are uploading – you will need to provide both 108x108px and 512x512px images. Need help finding an image? See PixelBay as a possible source for royalty-free images. Use an image editor (such as Paint on Windows or Preview on Mac) to change the size of the image.
 
    Everything else can stay as-is for now in the Developer Portal
 
@@ -294,7 +293,7 @@ You will want to replace these entries with content specific for your skill. We 
 
  13. Repeat the tests you performed earlier to ensure your changes are functioning properly. See step 4 for a review of how to performs functional tests.
 
-## Step 6: Add additional languages (Optional)
+## Step 6: Add Additional Languages (Optional)
 You can use the Alexa Skills Kit to create skills in multiple languages. A skill can support a single language, or any combination of the available languages:
 * English (US)
 * English (UK)
@@ -305,23 +304,23 @@ For more on developing skills in multiple languges, go [here](https://developer.
 1. To add an additional language, simply select the Add New Language tab and choose your second language. Choose and fill all necessary information like we did for the initial language of your skill. You will need to define Name and Invocation Name for the current language (e.g. German name for German skills). Then click Save to continue.
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/german_info.png)
 
-2. In the Interaction Model section, our skill share the same intent schema and use different sample utterances and custom slot type values in different language. Copy intent schema from the intent schema in the [GitHub repository here](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/speechAssets/IntentSchema.json) and change sample utterances into your second language. Custom slot type values should also be put in the new language for this skill. For Minecraft helper in German, go [GitHub repository here](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/speechAssets/SampleUtterances_de_DE.txt) for sample utterances and [GitHub repository here](https://github.com/alexa/skill-sample-nodejs-howto/tree/master/speechAssets/customSlotTypes/LIST_OF_ITEMS_de_DE) for custom slot type values.
+2. In the Interaction Model section, our skill shares the same intent schema and uses different sample utterances and custom slot type values in different languages. Copy intent schema from the intent schema in the [GitHub repository here](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/speechAssets/IntentSchema.json) and change sample utterances into your second language. Custom slot type values should also be put in the new language for this skill. For Minecraft helper in German, go [GitHub repository here](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/speechAssets/SampleUtterances_de_DE.txt) for sample utterances and [GitHub repository here](https://github.com/alexa/skill-sample-nodejs-howto/tree/master/speechAssets/customSlotTypes/LIST_OF_ITEMS_de_DE) for custom slot type values.
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/german_intent.png)
 
 3. Open the source file for your Lambda function, index.js. In the languageString variable, look up the locale for your current language, edit the language strings, and other message like you did for your initial language. Also remember to edit recipes in recipes.js. Recipie names and recipies strings are supposed to be defined using your second language.
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/german_strings.png)
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/german_recipes.png)
 
-4. For better latency, deploying your code to different endpoints is recommended. Follow the Create Lambda Function instructions in Step 2 and be sure to select an appropriate lambda region. Select **US East (N. Virginia)** for US skills and **EU (Ireland)** for UK/DE skills. Copy the ARN for use in the Configuration section of the Amazon Developer Portal.
+4. For better latency, deploying your code to different endpoints is recommended. Follow the Create Lambda Function instructions in Step 2 and be sure to select an appropriate Lambda region. Select **US East (N. Virginia)** for US skills and **EU (Ireland)** for UK/DE skills. Copy the ARN for use in the Configuration section of the Amazon Developer Portal.
 
-5. Go back to skill Configuration section. which contains Global fields for all languages. Add extra endpoint and paste your Lambda ARN. Save your skill configuration information.
+5. Go back to skill Configuration section, which contains Global fields for all languages. Add an extra endpoint and paste your Lambda ARN. Save your skill configuration information.
 
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/german_lambda.png)
 
-6. Test your skill in the second language using Service Simulator or device.
+6. Test your skill in the second language using Service Simulator or a device.
 
 
-## Step 7: Publish Your skill
+## Step 7: Publish Your Skill
 
 Now we need to go back to our Developer Portal to test and edit our skill and we will be ready for certification.
 
@@ -358,7 +357,7 @@ For other publishing information:
 
   Once you have uploaded your icons, you should see a success message at the bottom of the screen. Finally, **select Next**.
 
-4. (Optional) For multiple language skill, once you finish and save publishing information for your initial language, you will need to do it again for your second language. Under your second language tab, select publishing infomation, and add additional publishing region(s) to the global fields and all other customer facing information in non-global fields.
+4. (Optional) For multi-language skills, once you finish and save publishing information for your initial language, you will need to do it again for your second language. Under your second language tab, select publishing infomation, and add additional publishing region(s) to the global fields and all other customer facing information in non-global fields.
 
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/publishing_de.png)
 
