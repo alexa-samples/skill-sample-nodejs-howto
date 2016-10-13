@@ -1,6 +1,6 @@
 # Step-by-Step Guide to Build a How-To Skill
 
-We have launched a new skill template that makes it easy for developers and non-developers to create a skill similar to “DrinkMaster,” "Aromatherapy", "Timed Meditation", "Minecraft Helper", etc. These type of skills share the unique ability to parameterize what the user says and map it to a content catalog. For example, a user might say "Alexa, Ask Aromatherapy for a recipe for focus" and Alexa would map the word "focus" to the correct oil combination in the content catalog. Or, a user might say "Alexa, Ask DrinkMaster how to make a Margarita" and Alexa would map the word "margarita" to the correct drink recipe in the content catalog.
+We have launched a new skill template that makes it easy for developers and non-developers to create a skill similar to “DrinkMaster”, "Aromatherapy", "Timed Meditation", "Minecraft Helper", etc. These type of skills share the unique ability to parameterize what the user says and map it to a content catalog. For example, a user might say "Alexa, Ask Aromatherapy for a recipe for focus" and Alexa would map the word "focus" to the correct oil combination in the content catalog. Or, a user might say "Alexa, Ask DrinkMaster how to make a Margarita" and Alexa would map the word "margarita" to the correct drink recipe in the content catalog.
 
 The template leverages [AWS Lambda](https://aws.amazon.com/lambda/), the [Alexa Skills Kit (ASK)](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit), and the [ASK SDK](https://developer.amazon.com/public/community/post/Tx213D2XQIYH864/Announcing-the-Alexa-Skills-Kit-for-Node-js), while providing the business logic, multiple language support, use cases, error handling and help functions for your skill. You just need to come up with a content idea (like "Snack Recipes"), plug in your content and edit the sample provided (we walk you through how it’s done). It's a valuable way to quickly learn the end-to-end process for building and publishing an Alexa skill.
 
@@ -102,7 +102,7 @@ Next we will configure the AWS Lambda function that will host the logic for our 
 
 ### Installing and Working with the Alexa Skills Kit SDK for Node.js (alexa-sdk)
 
-To make the development of skills easier, we have created the The The Alexa SDK for Node.js. We will be using this module to deploy the sample. The The Alexa SDK is available on [Github](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) and can be deployed as a Node package from within your Node.js environment.
+To make the development of skills easier, we have created the The The Alexa SDK for Node.js. We will be using this module to deploy the sample. The Alexa SDK is available on [Github](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) and can be deployed as a Node package from within your Node.js environment.
 
  1. First, you will need to download the sample repository
     * On GitHub, navigate to the [How-to skill repository](https://github.com/alexa/skill-sample-nodejs-howto). Click download (the green button) to download the repository to your local machine.
@@ -248,7 +248,7 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
  "SKILL_NAME": "Minecraft Helper"
  ```
 
- 4. Update your item content catalog. The recipe.js file contains all the items that will be mapped to the custom slots you defined earlier in your skill. This can be found in the recipe.js file. Locate the directory you downloaded earlier, and open the recipe.js file with your favorite text editor. Look for corresponding language recipes by "Ctrl-F" **RECIPE_EN_US** for English(U.S.), **RECIPE_EN_GB** for English(U.K.) and **RECIPE_DE_DE** for German). In each language block, the recipes follow this format **"Item": "description"**. Here is a snippet of code for reference.
+ 4. Update your item content catalog. The recipe.js file contains all the items that will be mapped to the custom slots you defined earlier in your skill. This can be found in the recipe.js file. Locate the directory you downloaded earlier, and open the recipe.js file with your favorite text editor. Look for corresponding language recipes by "Ctrl-F" **RECIPE_EN_US** for English(U.S.), **RECIPE_EN_GB** for English(U.K.) and **RECIPE_DE_DE** for German. In each language block, the recipes follow this format **"Item": "description"**. Here is a snippet of code for reference.
 ```
 "snow golem": "A snow golem can be created by placing a pumpkin on top of  two snow blocks on the ground.",
 "pillar quartz block": "A pillar of quartz can be obtained by placing a block of quartz on top of a block of quartz in mine craft.",
@@ -287,7 +287,7 @@ You will want to replace these entries with content specific for your skill. We 
 
  11. Select your Lambda function and on the Code tab, select “Upload” to add the archive you just created.
 
- ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/uploadupdate.png)
+ ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/upload_zip.png)
 
  12. Once you have successfully added the file you will see it on the screen, then select “Save”.
 
