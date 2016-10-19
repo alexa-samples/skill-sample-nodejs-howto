@@ -276,7 +276,7 @@ You will want to replace these entries with content specific for your skill. We 
 
  7. Copy the Application Id into the value of the APP_ID variable in index.js.
  ```JSON
- var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
+ var APP_ID = undefined;  // TODO replace with your app ID.
  ```
 
  8. A minimum of 20 recipes is needed to get started, but about 100 is a good number to keep users engaged. The more the better.
