@@ -263,7 +263,7 @@ You will want to replace these entries with content specific for your skill. We 
  Try to create at least 20 different items in your content catalog.
 
 
- 5. You will also want to make sure to change the “Minecraft Helper” references  your skill. You don’t have to edit them all, but the following reference changes are required for certification.
+ 5. You will also want to make sure to change the “Minecraft Helper” references in your skill. You don’t have to edit them all, but the following reference changes are required for certification.
 * Find this code in the WELCOME_MESSAGE, and change "a chest" to your custom words:
 
 ```JSON
