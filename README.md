@@ -104,22 +104,6 @@ Next we will configure the AWS Lambda function that will host the logic for our 
 
 To make the development of skills easier, we have created the Alexa SDK for Node.js. We will be using this module to deploy the sample. The Alexa SDK is available on [Github](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) and can be deployed as a Node package from within your Node.js environment.
 
- 1. First, you will need to download the sample repository
-    * On GitHub, navigate to the [How-to skill repository](https://github.com/alexa/skill-sample-nodejs-howto). Click download (the green button) to download the repository to your local machine.
-
- 2. To leverage the SDK for ASK you will need to install Node.js and update npm. To set this up on your machine, [follow these steps](https://docs.npmjs.com/getting-started/installing-node).
-
- 3. Once you have the source downloaded, Node installed and npm updated, you are ready to install the Alexa SDK. Install this in the same directory as your src/index.js file for your skill. Change the directory to the src directory of your skill, and then in the command line, type:
-
-    ```
-    npm install --save alexa-sdk
-    ```
-    Once this is installed you will need to include the **node_modules** directory with the source code for your skill when you compress the src for uploading to AWS Lambda. Let's do this with the example.
-
- 4. Navigate to where you downloaded the sample repository and installed the Alexa SDK in step 3. Select the **src** directory.
-
- 5. Compress the files inside the src directory into a zip file. **Remember**, do not compress the src directory itself, just the files within the directory, the index.js file and the node_modules folder. Your compressed file should show up in the src directory. You will use this file in a later step.
-
 ### Create an AWS Account
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/aws_home.png)
@@ -152,9 +136,7 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
  3. Select **“Create a Lambda Function”** to begin the process of defining your Lambda function.
 
- 4. In the **‘Select Blueprint’** page, select **“Blank Function”**
-
- ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/blank_function.PNG)
+ 4. In the **‘Select Blueprint’** page, filter on **'Alexa'**, select **“alexa-skill-kit-sdk-howtoskill”**
 
  5. Now, you need to configure the event that will trigger your function to be called. As we are building skills with the Alexa Skills Kit, click on the gray dash-lined box and select Alexa Skills Kit from the dropdown menu.
 
@@ -168,31 +150,27 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/aws_config_function.PNG)
 
- 8. Select the **‘Code Entry Type’** as **‘Upload Zip File’** and upload the zip file containing the example you created in Step 1. **Note:** This zip file should contain the contents of the src directory, including the node_modules subfolder.
-
- ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/aws_upload_zip.png)
-
- 9. Set your handler and role as follows:
+ 8. Set your handler and role as follows:
 
     * Keep Handler as ‘index.handler’
     * Drop down the “Role” menu and select **“Create a new custom role”**. (Note: if you have already used Lambda you may already have a ‘lambda_basic_execution’ role created that you can use.) This will launch a new tab in the IAM Management Console.
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/aws_role.png)
 
- 10. You will be asked to set up your Identity and Access Management or “IAM” role if you have not done so. AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources. We need to create a role that allows our skill to invoke this Lambda function. In the Role Summary section, select "Create a new IAM Role" from the IAM Role dropdown menu. The Role Name and policy document will automatically populate.
+ 9. You will be asked to set up your Identity and Access Management or “IAM” role if you have not done so. AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources. We need to create a role that allows our skill to invoke this Lambda function. In the Role Summary section, select "Create a new IAM Role" from the IAM Role dropdown menu. The Role Name and policy document will automatically populate.
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/aws_role.png)
 
- 11. Select **“Allow”** in the lower right corner and you will be returned to your Lambda function.
+ 10. Select **“Allow”** in the lower right corner and you will be returned to your Lambda function.
 
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/allowrole.png)
 
- 12. Keep the Advanced settings as default. Select **‘Next’** and review. You should see something like below. Then select **‘Create Function’**:
+ 11. Keep the Advanced settings as default. Select **‘Next’** and review. You should see something like below. Then select **‘Create Function’**:
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/CreateFunctionbuitton.png)
 
- 13. Congratulations, you have created your AWS Lambda function. **Copy** the ARN for use in the Configuration section of the Amazon Developer Portal.
+ 12. Congratulations, you have created your AWS Lambda function. **Copy** the ARN for use in the Configuration section of the Amazon Developer Portal.
 
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/ARN.png)
 
@@ -239,16 +217,18 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
    Everything else can stay as-is for now in the Developer Portal
 
- 2. Open the source file for your Lambda function, index.js, in an editor of your choice. This is in the src directory of the repository you downloaded earlier. Look for corresponding locale strings in languageStrings object. "Ctrl-F" **en-US** for English(U.S.), **en-GB** for English(U.K.) and **de-DE** for German. You will see all stings defined for current language in the Minecraft Helper example. **Note**: **'%s'** in the string represents code logic variable.
+ 2. Download your code from your Lambda function on aws.amazon.com. From the **'Actions'** dropdown choose **'Download Code'**. If you're using a mac, you may need to add a '.zip' extension to the downloaded file. Uncompress this file.
+
+ 3. Open the source file for your Lambda function, index.js, in an editor of your choice. This is in the src directory of the repository you downloaded earlier. Look for corresponding locale strings in languageStrings object. "Ctrl-F" **en-US** for English(U.S.), **en-GB** for English(U.K.) and **de-DE** for German. You will see all stings defined for current language in the Minecraft Helper example. **Note**: **'%s'** in the string represents code logic variable.
 ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/index.png)
 
- 3. Change the SKILL_NAME variable to the name of your skill.
+ 4. Change the SKILL_NAME variable to the name of your skill.
 
  ```JSON
  "SKILL_NAME": "Minecraft Helper"
  ```
 
- 4. Update your item content catalog. The recipe.js file contains all the items that will be mapped to the custom slots you defined earlier in your skill. This can be found in the recipe.js file. Locate the directory you downloaded earlier, and open the recipe.js file with your favorite text editor. Look for corresponding language recipes by "Ctrl-F" **RECIPE_EN_US** for English(U.S.), **RECIPE_EN_GB** for English(U.K.) and **RECIPE_DE_DE** for German. In each language block, the recipes follow this format **"Item": "description"**. Here is a snippet of code for reference.
+ 5. Update your item content catalog. The recipe.js file contains all the items that will be mapped to the custom slots you defined earlier in your skill. This can be found in the recipe.js file. Locate the directory you downloaded earlier, and open the recipe.js file with your favorite text editor. Look for corresponding language recipes by "Ctrl-F" **RECIPE_EN_US** for English(U.S.), **RECIPE_EN_GB** for English(U.K.) and **RECIPE_DE_DE** for German. In each language block, the recipes follow this format **"Item": "description"**. Here is a snippet of code for reference.
 ```
 "snow golem": "A snow golem can be created by placing a pumpkin on top of  two snow blocks on the ground.",
 "pillar quartz block": "A pillar of quartz can be obtained by placing a block of quartz on top of a block of quartz in mine craft.",
@@ -263,35 +243,35 @@ You will want to replace these entries with content specific for your skill. We 
  Try to create at least 20 different items in your content catalog.
 
 
- 5. You will also want to make sure to change the “Minecraft Helper” references in your skill. You don’t have to edit them all, but the following reference changes are required for certification.
+ 6. You will also want to make sure to change the “Minecraft Helper” references in your skill. You don’t have to edit them all, but the following reference changes are required for certification.
 * Find this code in the WELCOME_MESSAGE, and change "a chest" to your custom words:
 
 ```JSON
     "WELCOME_MESSAGE" : "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with.",
 ```
- 6.  In order to control who accesses your web service, we should validate the Application Id in requests made to your web service. Let’s go back to your Alexa skill in your Developer Portal for a moment. Copy in your Application Id from the ‘Skill Information’ section in your developer portal
+ 7.  In order to control who accesses your web service, we should validate the Application Id in requests made to your web service. Let’s go back to your Alexa skill in your Developer Portal for a moment. Copy in your Application Id from the ‘Skill Information’ section in your developer portal
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/changeAppId.png)
 
 
- 7. Copy the Application Id into the value of the APP_ID variable in index.js.
+ 8. Copy the Application Id into the value of the APP_ID variable in index.js.
  ```JSON
  var APP_ID = undefined;  // TODO replace with your app ID.
  ```
 
- 8. A minimum of 20 recipes is needed to get started, but about 100 is a good number to keep users engaged. The more the better.
+ 9. A minimum of 20 recipes is needed to get started, but about 100 is a good number to keep users engaged. The more the better.
 
- 9. Be sure to select **SAVE** when you are all done. Note: we test initially in the Developer Portal, not in our Lambda function (AWS).
+ 10. Be sure to select **SAVE** when you are all done. Note: we test initially in the Developer Portal, not in our Lambda function (AWS).
 
- 10. Log back into your AWS console and upload the changes you have just made. First you will need to zip up the files into a new archive. You can do this by selecting the files that you need in the src directory (the node_modules directory and your updated index.js) into a new archive. Be sure that you compress the files in the folder, not the folder itself.
+ 11. Log back into your AWS console and upload the changes you have just made. First you will need to zip up the files into a new archive. You can do this by selecting the files that you need in the src directory (the node_modules directory and your updated index.js) into a new archive. Be sure that you compress the files in the folder, **not the folder itself**.
 
- 11. Select your Lambda function and on the Code tab, select “Upload” to add the archive you just created.
+ 12. Select your Lambda function and on the Code tab, select “Upload” to add the archive you just created.
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/how-to/upload_zip.png)
 
- 12. Once you have successfully added the file you will see it on the screen, then select “Save”.
+ 13. Once you have successfully added the file you will see it on the screen, then select “Save”.
 
- 13. Repeat the tests you performed earlier to ensure your changes are functioning properly. See step 4 for a review of how to performs functional tests.
+ 14. Repeat the tests you performed earlier to ensure your changes are functioning properly. See step 4 for a review of how to performs functional tests.
 
 ## Step 6: Add Additional Languages (Optional)
 You can use the Alexa Skills Kit to create skills in multiple languages. A skill can support a single language, or any combination of the available languages:
@@ -386,4 +366,3 @@ Congratulations! You have successfully submitted your skill for publication. You
 * [Voice Design 101 - On Demand Webinar](https://goto.webcasts.com/starthere.jsp?ei=1087594)
 * [Developer Office Hours](https://attendee.gotowebinar.com/rt/8389200425172113931)
 * [Developing Skills in Multiple Languages](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-skills-in-multiple-languages)
-
