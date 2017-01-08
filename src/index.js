@@ -37,7 +37,7 @@ var handlers = {
         if (recipe) {
             this.attributes['speechOutput'] = recipe;
             this.attributes['repromptSpeech'] = this.t("RECIPE_REPEAT_MESSAGE");
-            this.emit(':askWithCard', recipe, this.attributes['repromptSpeech'], cardTitle, recipe);
+            this.emit(':tellWithCard', recipe, this.attributes['repromptSpeech'], cardTitle, recipe);
         } else {
             var speechOutput = this.t("RECIPE_NOT_FOUND_MESSAGE");
             var repromptSpeech = this.t("RECIPE_NOT_FOUND_REPROMPT");
@@ -51,7 +51,7 @@ var handlers = {
             this.attributes['speechOutput'] = speechOutput;
             this.attributes['repromptSpeech'] = repromptSpeech;
 
-            this.emit(':ask', speechOutput, repromptSpeech);
+            this.emit(':tell', speechOutput, repromptSpeech);
         }
     },
     'AMAZON.HelpIntent': function () {
@@ -81,13 +81,13 @@ var languageStrings = {
             "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with.",
             "WELCOME_REPROMT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",
-            "HELP_MESSAGE": "You can ask questions such as, what\'s the recipe, or, you can say exit...Now, what can I help you with?",
-            "HELP_REPROMT": "You can say things like, what\'s the recipe, or you can say exit...Now, what can I help you with?",
+            "HELP_MESSAGE": "You can ask questions such as, how can I build a snow golem? Or, you can say exit...Now, what can I help you with?",
+            "HELP_REPROMT": "You can say things like, how can I build a snow golem? Or, you can say exit...Now, what can I help you with?",
             "STOP_MESSAGE": "Goodbye!",
             "RECIPE_REPEAT_MESSAGE": "Try saying repeat.",
             "RECIPE_NOT_FOUND_MESSAGE": "I\'m sorry, I currently do not know ",
             "RECIPE_NOT_FOUND_WITH_ITEM_NAME": "the recipe for %s. ",
-            "RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME": "that recipe. ",
+            "RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME": "I could not find that recipe. ",
             "RECIPE_NOT_FOUND_REPROMPT": "What else can I help with?"
         }
     },
@@ -98,13 +98,13 @@ var languageStrings = {
             "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with.",
             "WELCOME_REPROMT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",
-            "HELP_MESSAGE": "You can ask questions such as, what\'s the recipe, or, you can say exit...Now, what can I help you with?",
-            "HELP_REPROMT": "You can say things like, what\'s the recipe, or you can say exit...Now, what can I help you with?",
+            "HELP_MESSAGE": "You can ask questions such as, how can I build a snow golem?, or, you can say exit...Now, what can I help you with?",
+            "HELP_REPROMT": "You can say things like, how can I build a snow golem? or you can say exit...Now, what can I help you with?",
             "STOP_MESSAGE": "Goodbye!",
             "RECIPE_REPEAT_MESSAGE": "Try saying repeat.",
             "RECIPE_NOT_FOUND_MESSAGE": "I\'m sorry, I currently do not know ",
             "RECIPE_NOT_FOUND_WITH_ITEM_NAME": "the recipe for %s. ",
-            "RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME": "that recipe. ",
+            "RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME": "I could not find that recipe. ",
             "RECIPE_NOT_FOUND_REPROMPT": "What else can I help with?"
         }
     },
@@ -115,8 +115,8 @@ var languageStrings = {
             "WELCOME_MESSAGE": "Willkommen bei %s. Du kannst beispielsweise die Frage stellen: Welche Rezepte gibt es für eine Truhe? ... Nun, womit kann ich dir helfen?",
             "WELCOME_REPROMT": "Wenn du wissen möchtest, was du sagen kannst, sag einfach „Hilf mir“.",
             "DISPLAY_CARD_TITLE": "%s - Rezept für %s.",
-            "HELP_MESSAGE": "Du kannst beispielsweise Fragen stellen wie „Wie geht das Rezept für“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?",
-            "HELP_REPROMT": "Du kannst beispielsweise Sachen sagen wie „Wie geht das Rezept für“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?",
+            "HELP_MESSAGE": "Du kannst beispielsweise Fragen stellen wie „Welche Rezepte gibt es für eine Truhe?“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?",
+            "HELP_REPROMT": "Du kannst beispielsweise Sachen sagen wie „Welche Rezepte gibt es für eine Truhe?“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?",
             "STOP_MESSAGE": "Auf Wiedersehen!",
             "RECIPE_REPEAT_MESSAGE": "Sage einfach „Wiederholen“.",
             "RECIPE_NOT_FOUND_MESSAGE": "Tut mir leid, ich kenne derzeit ",
