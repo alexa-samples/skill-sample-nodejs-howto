@@ -37,7 +37,7 @@ var handlers = {
         if (recipe) {
             this.attributes['speechOutput'] = recipe;
             this.attributes['repromptSpeech'] = this.t("RECIPE_REPEAT_MESSAGE");
-            this.emit(':askWithCard', recipe, this.attributes['repromptSpeech'], cardTitle, recipe);
+            this.emit(':tellWithCard', recipe, this.attributes['repromptSpeech'], cardTitle, recipe);
         } else {
             var speechOutput = this.t("RECIPE_NOT_FOUND_MESSAGE");
             var repromptSpeech = this.t("RECIPE_NOT_FOUND_REPROMPT");
@@ -98,8 +98,8 @@ var languageStrings = {
             "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with.",
             "WELCOME_REPROMT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",
-            "HELP_MESSAGE": "You can ask questions such as, what\'s the recipe, or, you can say exit...Now, what can I help you with?",
-            "HELP_REPROMT": "You can say things like, what\'s the recipe, or you can say exit...Now, what can I help you with?",
+            "HELP_MESSAGE": "You can ask questions such as, what\'s the recipe for a snow golem, or, you can say exit...Now, what can I help you with?",
+            "HELP_REPROMT": "You can say things like, what\'s the recipe for an iron pickaxe, or you can say exit...Now, what can I help you with?",
             "STOP_MESSAGE": "Goodbye!",
             "RECIPE_REPEAT_MESSAGE": "Try saying repeat.",
             "RECIPE_NOT_FOUND_MESSAGE": "I\'m sorry, I currently do not know ",
