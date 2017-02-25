@@ -20,7 +20,7 @@ var handlers = {
         this.attributes['speechOutput'] = this.t("WELCOME_MESSAGE", this.t("SKILL_NAME"));
         // If the user either does not reply to the welcome message or says something that is not
         // understood, they will be prompted again with this text.
-        this.attributes['repromptSpeech'] = this.t("WELCOME_REPROMT");
+        this.attributes['repromptSpeech'] = this.t("WELCOME_REPROMPT");
         this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
     },
     'RecipeIntent': function () {
@@ -79,7 +79,7 @@ var languageStrings = {
             "RECIPES": recipes.RECIPE_EN_GB,
             "SKILL_NAME": "British Minecraft Helper",
             "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with.",
-            "WELCOME_REPROMT": "For instructions on what you can say, please say help me.",
+            "WELCOME_REPROMPT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",
             "HELP_MESSAGE": "You can ask questions such as, what\'s the recipe, or, you can say exit...Now, what can I help you with?",
             "HELP_REPROMT": "You can say things like, what\'s the recipe, or you can say exit...Now, what can I help you with?",
@@ -96,7 +96,7 @@ var languageStrings = {
             "RECIPES" : recipes.RECIPE_EN_US,
             "SKILL_NAME" : "American Minecraft Helper",
             "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with.",
-            "WELCOME_REPROMT": "For instructions on what you can say, please say help me.",
+            "WELCOME_REPROMPT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",
             "HELP_MESSAGE": "You can ask questions such as, what\'s the recipe for a snow golem, or, you can say exit...Now, what can I help you with?",
             "HELP_REPROMT": "You can say things like, what\'s the recipe for an iron pickaxe, or you can say exit...Now, what can I help you with?",
@@ -113,7 +113,7 @@ var languageStrings = {
             "RECIPES" : recipes.RECIPE_DE_DE,
             "SKILL_NAME" : "Assistent für Minecraft in Deutsch",
             "WELCOME_MESSAGE": "Willkommen bei %s. Du kannst beispielsweise die Frage stellen: Welche Rezepte gibt es für eine Truhe? ... Nun, womit kann ich dir helfen?",
-            "WELCOME_REPROMT": "Wenn du wissen möchtest, was du sagen kannst, sag einfach „Hilf mir“.",
+            "WELCOME_REPROMPT": "Wenn du wissen möchtest, was du sagen kannst, sag einfach „Hilf mir“.",
             "DISPLAY_CARD_TITLE": "%s - Rezept für %s.",
             "HELP_MESSAGE": "Du kannst beispielsweise Fragen stellen wie „Wie geht das Rezept für“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?",
             "HELP_REPROMT": "Du kannst beispielsweise Sachen sagen wie „Wie geht das Rezept für“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?",
