@@ -21,7 +21,9 @@ var handlers = {
         // If the user either does not reply to the welcome message or says something that is not
         // understood, they will be prompted again with this text.
         this.attributes['repromptSpeech'] = this.t("WELCOME_REPROMPT");
-        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+
+        this.response.speak(this.attributes['speechOutput']).listen(this.attributes['repromptSpeech']);
+        this.emit(':responseReady');
     },
     'RecipeIntent': function () {
         var itemSlot = this.event.request.intent.slots.Item;
@@ -37,7 +39,10 @@ var handlers = {
         if (recipe) {
             this.attributes['speechOutput'] = recipe;
             this.attributes['repromptSpeech'] = this.t("RECIPE_REPEAT_MESSAGE");
-            this.emit(':tellWithCard', recipe, this.attributes['repromptSpeech'], cardTitle, recipe);
+
+            this.response.speak(recipe).listen(this.attributes['repromptSpeech']);
+            this.response.cardRenderer(cardTitle, recipe);
+            this.emit(':responseReady');
         } else {
             var speechOutput = this.t("RECIPE_NOT_FOUND_MESSAGE");
             var repromptSpeech = this.t("RECIPE_NOT_FOUND_REPROMPT");
@@ -51,16 +56,20 @@ var handlers = {
             this.attributes['speechOutput'] = speechOutput;
             this.attributes['repromptSpeech'] = repromptSpeech;
 
-            this.emit(':ask', speechOutput, repromptSpeech);
+            this.response.speak(speechOutput).listen(repromptSpeech);
+            this.emit(':responseReady');
         }
     },
     'AMAZON.HelpIntent': function () {
         this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
         this.attributes['repromptSpeech'] = this.t("HELP_REPROMPT");
-        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+
+        this.response.speak(this.attributes['speechOutput']).listen(this.attributes['repromptSpeech']);
+        this.emit(':responseReady');
     },
     'AMAZON.RepeatIntent': function () {
-        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+        this.response.speak(this.attributes['speechOutput']).listen(this.attributes['repromptSpeech']);
+        this.emit(':responseReady');
     },
     'AMAZON.StopIntent': function () {
         this.emit('SessionEndedRequest');
@@ -69,12 +78,13 @@ var handlers = {
         this.emit('SessionEndedRequest');
     },
     'SessionEndedRequest':function () {
-        this.emit(':tell', this.t("STOP_MESSAGE"));
+        this.response.speak(this.t("STOP_MESSAGE"));
     },
     'Unhandled': function () {
         this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
         this.attributes['repromptSpeech'] = this.t("HELP_REPROMPT");
-        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+        this.response.speak(this.attributes['speechOutput']).listen(this.attributes['repromptSpeech']);
+        this.emit(':responseReady');
     }
 };
 
