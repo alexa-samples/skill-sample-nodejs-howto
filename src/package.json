@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/alexa/skill-sample-nodejs-howto#readme",
   "dependencies": {
-    "alexa-sdk": "^1.0.6"
+    "alexa-sdk": "^1.0.12"
   }
 }
