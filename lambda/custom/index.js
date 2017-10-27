@@ -19,6 +19,7 @@ const languageStrings = {
     'en': {
         translation: {
             RECIPES: recipes.RECIPE_EN_US,
+            // TODO: Update these messages to customize.
             SKILL_NAME: 'Minecraft Helper',
             WELCOME_MESSAGE: "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with?",
             WELCOME_REPROMPT: 'For instructions on what you can say, please say help me.',
