@@ -26,13 +26,12 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
   * On your local machine, go to the ```skill-sample-nodejs-howto/lambda/``` directory and run ```deploy.js``` using Node.
 
-  ```
+    ```
     npm install aws-sdk
     node deploy.js
     ```
 
-    * Go to the the ```skill-sample-nodejs-howto/lambda/custom/``` directory and zip all of the files.  Be sure to only zip the files inside the directory, and not the directory itself.   Lambda needs to be able to find the ```index.js``` file at the root of the zip file.
-
+  * Go to the the ```skill-sample-nodejs-howto/lambda/custom/``` directory and zip all of the files.  Be sure to only zip the files inside the directory, and not the directory itself.   Lambda needs to be able to find the ```index.js``` file at the root of the zip file.
 
 6.  **Configure your trigger.** Click in the dashed box, and select Alexa Skills Kit from the list.  If you don't see Alexa Skills Kit in the list, jump back to step #3 on this page.
 
@@ -42,8 +41,7 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
 7.  **Configure your function.** This screen is where we will enter the important parts of our Lambda function.  These values will only ever be visible to you, but make sure that you name your function something meaningful.  "MinecraftHelper" is sufficient if you don't have another idea for a name.
 
-    <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-7-configure-your-function._TTH_.png" />
-
+  <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-7-configure-your-function._TTH_.png" />
 
 8.  **Select "Upload a .ZIP file" as your Code Entry Type** Then click "Upload" and select the zip file you created with the command above.
 
