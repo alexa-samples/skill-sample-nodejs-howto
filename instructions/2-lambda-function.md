@@ -21,9 +21,17 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
     <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-4-create-a-lambda-function._TTH_.png" />
 
-5.  **Choose the blueprint named "alexa-skill-kit-sdk-factskill".** We have created a blueprint as a shortcut to getting everything set up for your skill. You can search for a blueprint using the provided search box.  This blueprint adds the alexa-sdk to your Lambda function so that you don't have to upload it yourself.
+5. **Skip the blueprint and zip your files.**
+  * Under "Select blueprint", choose skip.
 
-    <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/fact/2-5-blueprint._TTH_.png" />  <!--TODO: THIS IMAGE NEEDS TO BE CUSTOMIZED FOR YOUR SKILL TEMPLATE. -->
+  * On your local machine, go to the ```skill-sample-nodejs-howto/lambda/``` directory and run ```deploy.js``` using Node.
+
+    ```
+    npm install aws-sdk
+    node deploy.js
+    ```
+
+  * Go to the the ```skill-sample-nodejs-howto/lambda/custom/``` directory and zip all of the files.  Be sure to only zip the files inside the directory, and not the directory itself.   Lambda needs to be able to find the ```index.js``` file at the root of the zip file.
 
 6.  **Configure your trigger.** Click in the dashed box, and select Alexa Skills Kit from the list.  If you don't see Alexa Skills Kit in the list, jump back to step #3 on this page.
 
@@ -33,9 +41,9 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
 7.  **Configure your function.** This screen is where we will enter the important parts of our Lambda function.  These values will only ever be visible to you, but make sure that you name your function something meaningful.  "MinecraftHelper" is sufficient if you don't have another idea for a name.
 
-    <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-7-configure-your-function._TTH_.png" />
+  <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-7-configure-your-function._TTH_.png" />
 
-8.  **Copy and paste the [provided code](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/lambda/custom/index.js) into the Lambda function code box.**  We have provided the code for this skill on [GitHub](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/lambda/custom/index.js).  Delete the contents of the code box, and paste the contents of the new code.
+8.  **Select "Upload a .ZIP file" as your Code Entry Type** Then click "Upload" and select the zip file you created with the command above.
 
 9.  **Set up your Lambda function role.**  If you haven't done this before, we have a [detailed walkthrough for setting up your first role for Lambda](https://github.com/alexa/alexa-cookbook/tree/master/aws/lambda-role.md).  If you have done this before, set your **Existing role** value to "lambda_basic_execution."
 
