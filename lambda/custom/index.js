@@ -124,10 +124,12 @@ const handlers = {
         this.emit(':responseReady');
     },
     'AMAZON.StopIntent': function () {
-        this.emit('SessionEndedRequest');
+        this.response.speak("Goodbye!");
+        this.emit(':responseReady');
     },
     'AMAZON.CancelIntent': function () {
-        this.emit('SessionEndedRequest');
+        this.response.speak("Goodbye!");
+        this.emit(':responseReady');
     },
     'SessionEndedRequest': function () {
         console.log(`Session ended: ${this.event.request.reason}`);
