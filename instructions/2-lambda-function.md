@@ -29,8 +29,6 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
 6.  **Set up your Lambda function role.**  If you haven't done this before, we have a [detailed walkthrough for setting up your first role for Lambda](https://github.com/alexa/alexa-cookbook/tree/master/aws/lambda-role.md).  If you have done this before, set your **Existing role** value to "lambda_basic_execution", then click the "Create Function" button in the bottom right corner.
 
-  <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-9-lambda-function-role._TTH_.png" />
-
 7. **Configure your trigger.** Look at the column on the left called "Add triggers", and select Alexa Skills Kit from the list.  If you don't see Alexa Skills Kit in the list, jump back to step #3 on this page.
 
     <!-- <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-6-configure-your-trigger._TTH_.png" /> TODO: THIS SCREENSHOT IS OUT OF DATE-->
@@ -43,20 +41,15 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
   cd lambda/custom
   npm install
   ```
-  * Next run ```deploy.js``` using Node.
-  ```
-  npm install aws-sdk
-  node deploy.js
-  ```
-  * Now under the section of the AWS page called "Function code", choose "Upload a .ZIP file" from the Code entry type dropdown. Then click "Upload" and select the zip file you created with the command above.
+  * Zip your files
+
+  * Now under the section of the AWS page called "Function code", choose "Upload a .ZIP file" from the Code entry type dropdown. Then click "Upload" and select the zip file you just created.
+
+  * Click the "Save" button.
 
 10. **For this guide, you can skip all of the Advanced settings.**  Click the **Next** button to move to the Review screen.
 
     <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-10-next-button._TTH_.png" />
-
-11. **The Review screen is a summary of your choices.  Click Create Function in the bottom left corner.**  You will need to scroll down to find **Create Function.**
-
-    <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-11-create-function-button._TTH_.png" />
 
 12. **After you create the function, the ARN value appears in the top right corner. Copy this value for use in the next section of the guide.**
 
