@@ -47,9 +47,7 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
   * Click the "Save" button.
 
-10. **For this guide, you can skip all of the Advanced settings.**  Click the **Next** button to move to the Review screen.
-
-    <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-10-next-button._TTH_.png" />
+10. **For this guide, you can skip all of the Advanced settings.**  
 
 12. **After you create the function, the ARN value appears in the top right corner. Copy this value for use in the next section of the guide.**
 
