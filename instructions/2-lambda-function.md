@@ -33,9 +33,21 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
     <!-- <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-6-configure-your-trigger._TTH_.png" /> TODO: THIS SCREENSHOT IS OUT OF DATE-->
 
-    Once you have selected Alexa Skills Kit, scroll down and click the **Add** button. Then click the **Save** button in the top right. You should see a green success message at the top of your screen. Now, click the box that has the Lambda icon followed by the name of your function (MinecraftHelper if you used our suggestion) and scroll down to the field called "Function code".
+8. Once you have selected Alexa Skills Kit, scroll down. Under Configure triggers, select Enable for Skill ID verification. A skill ID Edit box should appear. We will now retrieve your Skill ID from the developer portal.
 
-8.  **Zip your files locally then select "Upload a .ZIP file" as your Code Entry Type**
+9. Now lets secure this lambda function, so that it can only be invoked by your skill. Open up the [developer portal](https://developer.amazon.com/edw/home.html#/skills) and select your skill from the list. You mays till have a browser tab open if you started at the beginning of this tutorial.
+
+10. Click the Skill Information Link.
+
+    <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/3-2-configuration-tab._TTH_.png" />
+
+11. Copy the **Application ID** provided in the main window. This is also known as a skill ID, and is unique to your skill.
+
+12. Return back to your lambda function in the. You may already have this browser tab open from **Step 11**. Otherwise, open the lambda console by clicking here: [AWS Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions) and selecting the appropriate function. Scroll down to **Configure triggers**, paste the Skill ID in the Skill ID edit box.
+
+13. Click the **Add** button. Then click the **Save** button in the top right. You should see a green success message at the top of your screen. Now, click the box that has the Lambda icon followed by the name of your function and scroll down to the field called "Function code".
+
+14.  **Zip your files locally then select "Upload a .ZIP file" as your Code Entry Type**
   * On your local machine, go to the ```skill-sample-nodejs-howto/lambda/custom``` directory and run the npm command: `npm install`
   ```
   cd lambda/custom
@@ -47,9 +59,9 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
   * Click the "Save" button.
 
-10. **For this guide, you can skip all of the Advanced settings.**  
+15. **For this guide, you can skip all of the Advanced settings.**  
 
-12. **After you create the function, the ARN value appears in the top right corner. Copy this value for use in the next section of the guide.**
+16. **After you create the function, the ARN value appears in the top right corner. Copy this value for use in the next section of the guide.**
 
     <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/2-12-copy-ARN._TTH_.png" />  <!--TODO: THIS IMAGE NEEDS TO BE CUSTOMIZED FOR YOUR SKILL TEMPLATE. -->
 
