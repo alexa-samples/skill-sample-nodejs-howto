@@ -76,10 +76,10 @@ There are two parts to an Alexa skill.  The first part is the [Voice User Interf
 
 13.  If your interaction model builds successfully, click on **Configuration button** to move on to Configuration.  In our next step of this guide, we will be creating our Lambda function in the AWS developer console, but keep this browser tab open, because we will be returning here on [Page #3: Connect VUI to Code](./3-connect-vui-to-code.md).
 
-    If you get an error from your interaction model, check through this list:
+If you get an error from your interaction model, check through this list:
 
-    *  **Did you copy and paste the provided code into the appropriate boxes?**
-    *  **Did you accidentally add any unwanted characters to the Interaction Model or Sample Utterances?**
+  *  **Did you copy and paste the provided code into the appropriate boxes?**
+  *  **Did you accidentally add any unwanted characters to the Interaction Model or Sample Utterances?**
 
 <br/><br/>
 [![Next: Lambda Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_next_lambda_function._TTH_.png)](./2-lambda-function.md)
