@@ -13,7 +13,7 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
     <a href="https://console.aws.amazon.com/lambda/home" target="_new"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-2-services-lambda._TTH_.png" /></a>
 
-3.  **Check your AWS region.** AWS Lambda only works with the Alexa Skills Kit in two regions: US East (N. Virginia) and EU (Ireland).  Make sure you choose the region closest to your customers.
+3.  **Check your AWS region.** AWS Lambda only works with the Alexa Skills Kit in four regions: Asia Pacific (Tokyo), EU (Ireland), US East (N. Virginia) and US West (Oregon). Make sure you choose the region closest to your customers.
 
     <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-3-check-region._TTH_.png"/>
 
