@@ -35,13 +35,11 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
 8. Once you have selected Alexa Skills Kit, scroll down. Under Configure triggers, select Enable for Skill ID verification. A skill ID Edit box should appear. We will now retrieve your Skill ID from the developer portal.
 
-9. Now lets secure this lambda function, so that it can only be invoked by your skill. Open up the [developer portal](https://developer.amazon.com/edw/home.html#/skills) and select your skill from the list. You mays till have a browser tab open if you started at the beginning of this tutorial.
+9. Now lets secure this lambda function, so that it can only be invoked by your skill. Open up the [developer portal](https://developer.amazon.com/alexa/console/ask?) and find your skill from the list. You may still have a browser tab open if you started at the beginning of this tutorial.
 
-10. Click the Skill Information Link.
+10. Click the **View Skill ID** Link.
 
-    <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/3-2-configuration-tab._TTH_.png" />
-
-11. Copy the **Application ID** provided in the main window. This is also known as a skill ID, and is unique to your skill.
+11. Copy the **Skill ID** provided in the pop-up window. This is also known as an application ID, and is unique to your skill.
 
 12. Return back to your lambda function in the. You may already have this browser tab open from **Step 11**. Otherwise, open the lambda console by clicking here: [AWS Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions) and selecting the appropriate function. Scroll down to **Configure triggers**, paste the Skill ID in the Skill ID edit box.
 
