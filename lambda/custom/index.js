@@ -21,11 +21,11 @@ const languageStrings = {
             RECIPES: recipes.RECIPE_EN_US,
             // TODO: Update these messages to customize.
             SKILL_NAME: 'Minecraft Helper',
-            WELCOME_MESSAGE: "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with?",
+            WELCOME_MESSAGE: `Welcome to %s. You can ask a question like, what\'s the recipe for a {randomItem(RECIPES)}? ... Now, what can I help you with?`,
             WELCOME_REPROMPT: 'For instructions on what you can say, please say help me.',
             DISPLAY_CARD_TITLE: '%s  - Recipe for %s.',
-            HELP_MESSAGE: "You can ask questions such as, what\'s the recipe, or, you can say exit...Now, what can I help you with?",
-            HELP_REPROMPT: "You can say things like, what\'s the recipe, or you can say exit...Now, what can I help you with?",
+            HELP_MESSAGE: `You can ask questions such as, what\'s the recipe for a {randomItem(RECIPES)}, or, you can say exit...Now, what can I help you with?`,
+            HELP_REPROMPT: `You can say things like, what\'s the recipe for a {randomItem(RECIPES)}, or you can say exit...Now, what can I help you with?`,
             STOP_MESSAGE: 'Goodbye!',
             RECIPE_REPEAT_MESSAGE: 'Try saying repeat.',
             RECIPE_NOT_FOUND_MESSAGE: "I\'m sorry, I currently do not know ",
@@ -50,11 +50,11 @@ const languageStrings = {
         translation: {
             RECIPES: recipes.RECIPE_DE_DE,
             SKILL_NAME: 'Assistent für Minecraft in Deutsch',
-            WELCOME_MESSAGE: 'Willkommen bei %s. Du kannst beispielsweise die Frage stellen: Welche Rezepte gibt es für eine Truhe? ... Nun, womit kann ich dir helfen?',
+            WELCOME_MESSAGE: `Willkommen bei %s. Du kannst beispielsweise die Frage stellen: Welche Rezepte gibt es für eine {randomItem(RECIPES)}? ... Nun, womit kann ich dir helfen?`,
             WELCOME_REPROMPT: 'Wenn du wissen möchtest, was du sagen kannst, sag einfach „Hilf mir“.',
             DISPLAY_CARD_TITLE: '%s - Rezept für %s.',
-            HELP_MESSAGE: 'Du kannst beispielsweise Fragen stellen wie „Wie geht das Rezept für“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?',
-            HELP_REPROMPT: 'Du kannst beispielsweise Sachen sagen wie „Wie geht das Rezept für“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?',
+            HELP_MESSAGE: `Du kannst beispielsweise Fragen stellen wie „Wie geht das Rezept für {randomItem(RECIPES)}“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?`,
+            HELP_REPROMPT: `Du kannst beispielsweise Sachen sagen wie „Wie geht das Rezept für {randomItem(RECIPES)}“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?`,
             STOP_MESSAGE: 'Auf Wiedersehen!',
             RECIPE_REPEAT_MESSAGE: 'Sage einfach „Wiederholen“.',
             RECIPE_NOT_FOUND_MESSAGE: 'Tut mir leid, ich kenne derzeit ',
@@ -90,9 +90,9 @@ const handlers = {
 
         if (recipe) {
             this.attributes.speechOutput = recipe;
-            this.attributes.repromptSpeech = this.t('RECIPE_REPEAT_MESSAGE');
+            // this.attributes.repromptSpeech = this.t('RECIPE_REPEAT_MESSAGE');
 
-            this.response.speak(recipe).listen(this.attributes.repromptSpeech);
+            this.response.speak(recipe); //.listen(this.attributes.repromptSpeech)
             this.response.cardRenderer(cardTitle, recipe);
             this.emit(':responseReady');
         } else {
@@ -140,6 +140,15 @@ const handlers = {
         this.response.speak(this.attributes.speechOutput).listen(this.attributes.repromptSpeech);
         this.emit(':responseReady');
     },
+};
+
+function randomItem(obj) {
+    let result;
+    let count = 0;
+    for (var prop in obj)
+      if (Math.random() < 1/++count)
+        result = prop;
+    return result;
 };
 
 exports.handler = function (event, context, callback) {
