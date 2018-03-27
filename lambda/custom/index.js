@@ -148,14 +148,15 @@ const handlers = {
     },
 };
 
-function randomItem(obj) {
-    let result;
-    let count = 0;
-    for (var prop in obj)
-      if (Math.random() < 1/++count)
-        result = prop;
-    return result;
-};
+function randomItem(myData) {
+    // the argument is an array [] of words or phrases
+
+    var i = 0;
+
+    i = Math.floor(Math.random() * myData.length);
+
+    return(myData[i]);
+}
 
 exports.handler = function (event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
