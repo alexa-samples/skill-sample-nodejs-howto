@@ -2,9 +2,6 @@
   "skillManifest": {
     "publishingInformation": {
       "locales": {
-        "de-DE": {
-          "name": "Assistent für Minecraft in Deutsch"
-        },
         "en-US": {
           "summary": "Spend some time coming up with an interesting, succinct description.",
           "examplePhrases": [
@@ -18,6 +15,9 @@
           ],
           "name": "Minecraft Helper",
           "description": "Sample Full Description"
+        },
+        "de-DE": {
+          "name": "Assistent für Minecraft in Deutsch"
         },
         "en-GB": {
           "name": "British Minecraft Helper"
