@@ -150,12 +150,12 @@ const handlers = {
 
 function randomItem(myData) {
     // the argument is an array [] of words or phrases
+    let keys = Object.keys(myData);
+    let i = 0;
 
-    var i = 0;
+    i = Math.floor(Math.random() * keys.length);
 
-    i = Math.floor(Math.random() * myData.length);
-
-    return(myData[i]);
+    return(keys[i]);
 }
 
 exports.handler = function (event, context, callback) {
