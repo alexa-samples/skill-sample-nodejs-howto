@@ -3,6 +3,8 @@
 
 
 # Build a How-To Skill
+<img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
+
 This tutorial will walk first-time Alexa skills developers through all the required steps involved in creating a parameter-based skill using a template called ‘Minecraft Helper’. Ask how to craft an item in the game Minecraft, and this skill will give you instructions.
 
 
