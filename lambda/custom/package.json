@@ -1,11 +1,17 @@
 {
-  "name": "skill-sample-nodejs-minecraft-helper",
+  "name": "how-to",
   "version": "1.0.0",
-  "description": "Minecraft Helper sample skill",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "alexa-sdk": "^1.0.0"
+    "ask-sdk-core": "^2.0.0",
+    "ask-sdk-model": "^1.0.0",
+    "i18next": "^10.5.0",
+    "i18next-sprintf-postprocessor": "^0.2.2"
   }
 }
