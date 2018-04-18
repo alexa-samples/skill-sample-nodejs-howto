@@ -18,7 +18,7 @@ At this point, you should have a working copy of our How To skill.  In order to 
 
 2.  **New sentences to respond to your users.** There are several sentences and responses that you will want to customize for your skill.
 
-    1.  **Go back to your copy of [index.js](https://github.com/alexa/skill-sample-nodejs-howto/blob/en-US/lambda/custom/index.js).**
+    1.  **Go back to your copy of [index.js](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/lambda/custom/index.js).**
 
     2.  **Look for the comment "TODO: The items below this comment need your attention."** This is the beginning of the section where you need to customize several text strings for your skill.
 
