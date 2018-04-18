@@ -8,7 +8,7 @@ At this point, you should have a working copy of our How To skill.  In order to 
 
 1.  **New data.** You will need to provide a set of data for your topic.  We recommend a minimum of 25, but a total closer to 100 offers a better experience.
 
-    1.  **Open a copy of index.js.** If you haven't already downloaded the code for this project, [you can find a copy of index.js here on GitHub](https://github.com/alexa/skill-sample-nodejs-howto/blob/en-US/lambda/custom/index.js).  You can use a simple, lightweight code editor like [Atom](http://atom.io), [Sublime Text](http://sublimetext.com), or [VSCode](http://code.visualstudio.com), but you also have the option to edit the code directly in your Lambda function.
+    1.  **Open a copy of index.js.** If you haven't already downloaded the code for this project, [you can find a copy of index.js here on GitHub](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/lambda/custom/index.js).  You can use a simple, lightweight code editor like [Atom](http://atom.io), [Sublime Text](http://sublimetext.com), or [VSCode](http://code.visualstudio.com), but you also have the option to edit the code directly in your Lambda function.
 
     2.  **Search for the comment "TODO: Replace this data with your own."**  This is the data for our skill.  You can see that it is a simple list of facts.
 
