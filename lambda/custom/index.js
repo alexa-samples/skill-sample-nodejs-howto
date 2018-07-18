@@ -167,7 +167,7 @@ const languageStrings = {
   'en': require('languages/en.js'),
   'en-US': require('languages/en-US.js'),
   'en-GB': require('languages/en-GB.js'),
-  'de': require('languages/de.js'),
+  'de': require('languages/de.js')
 };
 
 // Finding the locale of the user
