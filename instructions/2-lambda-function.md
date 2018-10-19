@@ -42,7 +42,7 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 
 13. Scroll down the page until you see a section called **Function code**.
 
-14. The code pre-loaded into the function comes from [here](/alexa/skill-sample-nodejs-howto/blob/en-US/lambda/custom/index.js). If you modify the code, be sure to click "Save".
+14. The code pre-loaded into the function comes from [here](https://github.com/alexa/skill-sample-nodejs-howto/blob/master/lambda/custom/index.js). If you modify the code, be sure to click "Save".
 
 15. You should see the Amazon Resource Name (ARN) a unique identifier for this function in the top right corner of the page. **Copy the ARN value for this Lambda function** for use in the next section of the guide.
 
