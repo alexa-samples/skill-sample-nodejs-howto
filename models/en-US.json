@@ -1,170 +1,177 @@
 {
   "interactionModel": {
-    "languageModel": {
-      "invocationName": "us constitution the tldr",
-      "intents": [
-        {
-          "name": "AmendmentIntent",
-          "slots": [
-            {
-              "name": "Ordinal",
-              "type": "ORDINAL"
-            }
+      "languageModel": {
+          "invocationName": "constitution",
+          "intents": [
+              {
+                  "name": "AmendmentIntent",
+                  "slots": [
+                      {
+                          "name": "Ordinal",
+                          "type": "ORDINAL"
+                      }
+                  ],
+                  "samples": [
+                      "what's the {Ordinal} one",
+                      "what's the {Ordinal} amendment",
+                      "{Ordinal}",
+                      "what is the {Ordinal} amendment"
+                  ]
+              },
+              {
+                  "name": "AMAZON.RepeatIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              }
           ],
-          "samples": [
-            "what is the {Ordinal} amendment"
+          "types": [
+              {
+                  "name": "ORDINAL",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "first"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "second"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "third"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "fourth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "fifth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "sixth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "seventh"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "eigth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "ninth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "tenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "eleventh"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twelfth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "thirteenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "fourteenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "fifteenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "sixteenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "seventeenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "eighteenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "nineteenth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twentieth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twenty first"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twenty second"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twenty third"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twenty fourth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twenty fifth"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "twenty seventh"
+                          }
+                      }
+                  ]
+              }
           ]
-        },
-        {
-          "name": "AMAZON.RepeatIntent"
-        },
-        {
-          "name": "AMAZON.HelpIntent"
-        },
-        {
-          "name": "AMAZON.StopIntent"
-        },
-        {
-          "name": "AMAZON.CancelIntent"
-        }
-      ],
-      "types": [
-        {
-          "values": [
-            {
-              "name": {
-                "value": "first"
-              }
-            },
-            {
-              "name": {
-                "value": "second"
-              }
-            },
-            {
-              "name": {
-                "value": "third"
-              }
-            },
-            {
-              "name": {
-                "value": "fourth"
-              }
-            },
-            {
-              "name": {
-                "value": "fifth"
-              }
-            },
-            {
-              "name": {
-                "value": "sixth"
-              }
-            },
-            {
-              "name": {
-                "value": "seventh"
-              }
-            },
-            {
-              "name": {
-                "value": "eigth"
-              }
-            },
-            {
-              "name": {
-                "value": "ninth"
-              }
-            },
-            {
-              "name": {
-                "value": "tenth"
-              }
-            },
-            {
-              "name": {
-                "value": "eleventh"
-              }
-            },
-            {
-              "name": {
-                "value": "twelfth"
-              }
-            },
-            {
-              "name": {
-                "value": "thirteenth"
-              }
-            },
-            {
-              "name": {
-                "value": "fourteenth"
-              }
-            },
-            {
-              "name": {
-                "value": "fifteenth"
-              }
-            },
-            {
-              "name": {
-                "value": "sixteenth"
-              }
-            },
-            {
-              "name": {
-                "value": "seventeenth"
-              }
-            },
-            {
-              "name": {
-                "value": "eighteenth"
-              }
-            },
-            {
-              "name": {
-                "value": "nineteenth"
-              }
-            },
-            {
-              "name": {
-                "value": "twentieth"
-              }
-            },
-            {
-              "name": {
-                "value": "twenty first"
-              }
-            },
-            {
-              "name": {
-                "value": "twenty second"
-              }
-            },
-            {
-              "name": {
-                "value": "twenty third"
-              }
-            },
-            {
-              "name": {
-                "value": "twenty fourth"
-              }
-            },
-            {
-              "name": {
-                "value": "twenty fifth"
-              }
-            },
-            {
-              "name": {
-                "value": "twenty seventh"
-              }
-            }
-          ],
-          "name": "ORDINAL"
-        }
-      ]
-    }
+      }
   }
 }

@@ -4,7 +4,7 @@
       "invocationName": "assistent für minecraft",
       "intents": [
         {
-          "name": "RecipeIntent",
+          "name": "AmendmentIntent",
           "slots": [
             {
               "name": "Item",

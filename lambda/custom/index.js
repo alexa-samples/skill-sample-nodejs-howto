@@ -29,24 +29,25 @@ const LaunchRequestHandler = {
   },
 };
 
-const RecipeHandler = {
+const AmendmentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'RecipeIntent';
+            && handlerInput.requestEnvelope.request.intent.name === 'AmendmentIntent';
   },
   handle(handlerInput) {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
     const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
 
-    const itemSlot = handlerInput.requestEnvelope.request.intent.slots.Item;
+    const itemSlot = handlerInput.requestEnvelope.request.intent.slots.Ordinal;
     let itemName;
     if (itemSlot && itemSlot.value) {
-      itemName = itemSlot.value.toLowerCase();
+      //itemName = itemSlot.value.toLowerCase();
+      itemName = itemSlot.resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase();
     }
 
     const cardTitle = requestAttributes.t('DISPLAY_CARD_TITLE', requestAttributes.t('SKILL_NAME'), itemName);
-    const amendments = requestAttributes.t('AMENDMENTS');
-    const amendment = amendments[itemName];
+    //const myAmendments = requestAttributes.t('AMENDMENTS');
+    const amendment = amendments.AMENDMENT_EN_US[itemName];
     let speakOutput = "";
 
     if (amendment) {
@@ -169,12 +170,12 @@ const languageStrings = {
       SKILL_NAME: 'US Constitution TLDR',
       WELCOME_MESSAGE: 'Welcome to %s. You can ask a question like, what\'s the %s amendment? ... Now, what can I help you with?',
       WELCOME_REPROMPT: 'For instructions on what you can say, please say help me.',
-      DISPLAY_CARD_TITLE: '%s  - Recipe for %s.',
+      DISPLAY_CARD_TITLE: '%s  - the %s Amendment.',
       HELP_MESSAGE: 'You can ask questions such as, what\'s the %s amendment, or, you can say exit...Now, what can I help you with?',
       HELP_REPROMPT: 'Hint: there are only twenty three amendments. You can say things like, what\'s the %s amendment, or you can say exit...Now, what can I help you with?',
       STOP_MESSAGE: 'Goodbye!',
       AMENDMENT_REPEAT_MESSAGE: 'Try saying repeat.',
-      AMENDMENT_NOT_FOUND_MESSAGE: ' doesn\'t exist',
+      AMENDMENT_NOT_FOUND_MESSAGE: ' doesn\'t exist. ',
       AMENDMENT_NOT_FOUND_WITH_ITEM_NAME: 'The %s amendment',
       AMENDMENT_NOT_FOUND_WITHOUT_ITEM_NAME: 'That amendment',
       AMENDMENT_NOT_FOUND_REPROMPT: 'What else can I help with?'
@@ -217,7 +218,7 @@ function getRandomItem(arrayOfItems) {
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    RecipeHandler,
+    AmendmentHandler,
     HelpHandler,
     RepeatHandler,
     ExitHandler,
