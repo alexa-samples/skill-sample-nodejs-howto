@@ -32,7 +32,7 @@ const LaunchRequestHandler = {
 const RecipeHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'RecipeIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'RecipeIntent';
   },
   handle(handlerInput) {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
@@ -47,45 +47,47 @@ const RecipeHandler = {
     const cardTitle = requestAttributes.t('DISPLAY_CARD_TITLE', requestAttributes.t('SKILL_NAME'), itemName);
     const myRecipes = requestAttributes.t('RECIPES');
     const recipe = myRecipes[itemName];
-    let speakOutput = "";
+    let speakOutput = '';
 
     if (recipe) {
       sessionAttributes.speakOutput = recipe;
-      //sessionAttributes.repromptSpeech = requestAttributes.t('RECIPE_REPEAT_MESSAGE');
-      handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
-
-      return handlerInput.responseBuilder
-        .speak(sessionAttributes.speakOutput) // .reprompt(sessionAttributes.repromptSpeech)
-        .withSimpleCard(cardTitle, recipe)
-        .getResponse();
-    }
-    else{
-      speakOutput = requestAttributes.t('RECIPE_NOT_FOUND_MESSAGE');
-      const repromptSpeech = requestAttributes.t('RECIPE_NOT_FOUND_REPROMPT');
-      if (itemName) {
-        speakOutput += requestAttributes.t('RECIPE_NOT_FOUND_WITH_ITEM_NAME', itemName);
-      } else {
-        speakOutput += requestAttributes.t('RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME');
-      }
-      speakOutput += repromptSpeech;
-
-      sessionAttributes.speakOutput = speakOutput; //saving speakOutput to attributes, so we can use it to repeat
-      sessionAttributes.repromptSpeech = repromptSpeech;
-
+      // uncomment the _2_ reprompt lines if you want to repeat the info
+      // and prompt for a subsequent action
+      // sessionAttributes.repromptSpeech = requestAttributes.t('RECIPE_REPEAT_MESSAGE');
       handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
       return handlerInput.responseBuilder
         .speak(sessionAttributes.speakOutput)
-        .reprompt(sessionAttributes.repromptSpeech)
+        // .reprompt(sessionAttributes.repromptSpeech)
+        .withSimpleCard(cardTitle, recipe)
         .getResponse();
     }
-  }
+    speakOutput = requestAttributes.t('RECIPE_NOT_FOUND_MESSAGE');
+    const repromptSpeech = requestAttributes.t('RECIPE_NOT_FOUND_REPROMPT');
+    if (itemName) {
+      speakOutput += requestAttributes.t('RECIPE_NOT_FOUND_WITH_ITEM_NAME', itemName);
+    } else {
+      speakOutput += requestAttributes.t('RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME');
+    }
+    speakOutput += repromptSpeech;
+
+    // save outputs to attributes, so we can use it to repeat
+    sessionAttributes.speakOutput = speakOutput;
+    sessionAttributes.repromptSpeech = repromptSpeech;
+
+    handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+
+    return handlerInput.responseBuilder
+      .speak(sessionAttributes.speakOutput)
+      .reprompt(sessionAttributes.repromptSpeech)
+      .getResponse();
+  },
 };
 
 const HelpHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
@@ -106,7 +108,7 @@ const HelpHandler = {
 const RepeatHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.RepeatIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.RepeatIntent';
   },
   handle(handlerInput) {
     const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
@@ -121,8 +123,8 @@ const RepeatHandler = {
 const ExitHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && (handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent'
-                || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.CancelIntent');
+      && (handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent'
+        || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.CancelIntent');
   },
   handle(handlerInput) {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
@@ -136,7 +138,7 @@ const ExitHandler = {
 
 const SessionEndedRequestHandler = {
   canHandle(handlerInput) {
-    console.log("Inside SessionEndedRequestHandler");
+    console.log('Inside SessionEndedRequestHandler');
     return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
   },
   handle(handlerInput) {
@@ -163,7 +165,7 @@ const ErrorHandler = {
 /* CONSTANTS */
 const skillBuilder = Alexa.SkillBuilders.custom();
 const languageStrings = {
-  en: {
+  'en': {
     translation: {
       RECIPES: recipes.RECIPE_EN_US,
       SKILL_NAME: 'Minecraft Helper',
@@ -177,22 +179,22 @@ const languageStrings = {
       RECIPE_NOT_FOUND_MESSAGE: 'I\'m sorry, I currently do not know ',
       RECIPE_NOT_FOUND_WITH_ITEM_NAME: 'the recipe for %s. ',
       RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME: 'that recipe. ',
-      RECIPE_NOT_FOUND_REPROMPT: 'What else can I help with?'
+      RECIPE_NOT_FOUND_REPROMPT: 'What else can I help with?',
     },
   },
   'en-US': {
     translation: {
       RECIPES: recipes.RECIPE_EN_US,
-      SKILL_NAME: 'American Minecraft Helper'
+      SKILL_NAME: 'American Minecraft Helper',
     },
   },
   'en-GB': {
     translation: {
       RECIPES: recipes.RECIPE_EN_GB,
-      SKILL_NAME: 'British Minecraft Helper'
+      SKILL_NAME: 'British Minecraft Helper',
     },
   },
-  de: {
+  'de': {
     translation: {
       RECIPES: recipes.RECIPE_DE_DE,
       SKILL_NAME: 'Assistent für Minecraft in Deutsch',
@@ -206,7 +208,7 @@ const languageStrings = {
       RECIPE_NOT_FOUND_MESSAGE: 'Tut mir leid, ich kenne derzeit ',
       RECIPE_NOT_FOUND_WITH_ITEM_NAME: 'das Rezept für %s nicht. ',
       RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME: 'dieses Rezept nicht. ',
-      RECIPE_NOT_FOUND_REPROMPT: 'Womit kann ich dir sonst helfen?'
+      RECIPE_NOT_FOUND_REPROMPT: 'Womit kann ich dir sonst helfen?',
     },
   },
 };
@@ -218,7 +220,7 @@ const LocalizationInterceptor = {
       lng: handlerInput.requestEnvelope.request.locale,
       overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
       resources: languageStrings,
-      returnObjects: true
+      returnObjects: true,
     });
 
     const attributes = handlerInput.attributesManager.getRequestAttributes();
@@ -234,7 +236,7 @@ function getRandomItem(arrayOfItems) {
   let i = 0;
   i = Math.floor(Math.random() * arrayOfItems.length);
   return (arrayOfItems[i]);
-};
+}
 
 /* LAMBDA SETUP */
 exports.handler = skillBuilder
@@ -244,7 +246,7 @@ exports.handler = skillBuilder
     HelpHandler,
     RepeatHandler,
     ExitHandler,
-    SessionEndedRequestHandler
+    SessionEndedRequestHandler,
   )
   .addRequestInterceptors(LocalizationInterceptor)
   .addErrorHandlers(ErrorHandler)
