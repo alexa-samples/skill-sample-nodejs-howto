@@ -1,6 +1,7 @@
 /* eslint-disable  func-names */
 /* eslint-disable max-len */
 /* eslint quote-props: ['error', 'consistent'] */
+// TODO: Replace this data with your own.
 module.exports = {
   'RECIPE_EN_GB': {
     'snow golem': 'A snow golem can be created by placing a pumpkin on top of  two snow blocks on the ground.',
