@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "assistent für minecraft",
+      "invocationName": "minecraft assistent",
       "intents": [
         {
           "name": "RecipeIntent",

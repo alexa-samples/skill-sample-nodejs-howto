@@ -237,7 +237,7 @@ const languageStrings = {
   'de': {
     translation: {
       RECIPES: recipes.RECIPE_DE_DE,
-      SKILL_NAME: 'Assistent für Minecraft in Deutsch',
+      SKILL_NAME: 'Minecraft Assistent in Deutsch',
       WELCOME_MESSAGE: 'Willkommen bei %s. Du kannst beispielsweise die Frage stellen: Welche Rezepte gibt es für eine %s? ... Nun, womit kann ich dir helfen?',
       WELCOME_REPROMPT: 'Wenn du wissen möchtest, was du sagen kannst, sag einfach „Hilf mir“.',
       DISPLAY_CARD_TITLE: '%s - Rezept für %s.',
